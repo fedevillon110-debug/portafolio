@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Federico Villón — Video Editor</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVEGACIÓN
+     ============================================================ -->
+<nav>
+  <a href="#home" class="nav-logo">F<span>.</span>V</a>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#trabajos">Trabajos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Menú mobile -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"      onclick="closeMobile()">Home</a>
+  <a href="#sobre-mi"  onclick="closeMobile()">Sobre mí</a>
+  <a href="#trabajos"  onclick="closeMobile()">Trabajos</a>
+  <a href="#contacto"  onclick="closeMobile()">Contacto</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="home">
+  <div class="hero-bg" id="heroBg"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Portafolio — 2026</p>
+
+    <h1 class="hero-name">
+      Villón<br>
+      <span class="accent">Federico</span>
+    </h1>
+
+    <p class="hero-sub">
+      Video Editor&nbsp;<span>·</span>&nbsp;Diseño Gráfico&nbsp;<span>·</span>&nbsp;Content Creator
+    </p>
+
+    <div class="hero-scroll">
+      <div class="scroll-line">
+        <div class="scroll-dot"></div>
+        <div class="scroll-dot"></div>
+        <div class="scroll-dot"></div>
+      </div>
+      deslizá para ver más
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SOBRE MÍ
+     ============================================================ -->
+<section id="sobre-mi">
+  <div class="about-grid">
+
+    <!-- Foto -->
+    <div class="about-photo-wrap reveal">
+      <div class="about-corner tl"></div>
+      <div class="about-photo-frame">
+        <img src="fotometrajebyn.jpeg" alt="Federico Villón">
+      </div>
+      <div class="about-corner br"></div>
+    </div>
+
+    <!-- Texto -->
+    <div class="about-text">
+      <p class="section-tag reveal">Sobre mí</p>
+      <h2 class="section-title reveal">Quien<br>soy</h2>
+
+      <p class="about-bio reveal reveal-delay-1">
+        Soy <strong>Federico Villón</strong>, tengo 18 años y vivo en Concepción del Uruguay, Entre Ríos.
+        Estudio <span class="highlight">Ingeniería en Sistemas de Información</span> en la UTN FRCU
+        mientras me dedico de lleno a la edición de video y el diseño gráfico enfocado en
+        <span class="highlight">ventas para redes sociales</span>.
+      </p>
+
+      <p class="about-bio reveal reveal-delay-2">
+        Hace <strong>dos años</strong> arranqué editando mi propio contenido, mostrando mi día a día
+        como editor, y eso me permitió construir una base sólida de clientes reales:
+        <strong>peluquerías, ventas de iPhone y celulares</strong>, entre otros negocios que necesitan
+        contenido que venda.
+      </p>
+
+      <div class="about-stats reveal reveal-delay-3">
+        <div class="stat-item">
+          <div class="stat-number">2+</div>
+          <div class="stat-label">Años de exp.</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Clientes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">IG</div>
+          <div class="stat-label">Especialidad</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TRABAJOS
+     ============================================================ -->
+<section id="trabajos">
+  <p class="section-tag reveal">Portafolio</p>
+  <h2 class="section-title reveal">Mis<br>Trabajos</h2>
+
+  <!-- Tabs -->
+  <div class="tabs reveal">
+    <button class="tab-btn active" onclick="switchTab('diseno', this)">Diseño gráfico</button>
+    <button class="tab-btn"        onclick="switchTab('videos', this)">Videos</button>
+  </div>
+
+  <!-- ── PESTAÑA: DISEÑO ── -->
+  <div class="tab-panel active" id="tab-diseno">
+    <div class="design-grid">
+
+      <div class="design-card reveal reveal-delay-1">
+        <div class="design-card-inner">
+          <img src="como atendemos.jpg" alt="Flyer promocional"
+              style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="design-card-meta">
+          <div class="design-card-title">Flyer promocional</div>
+          <div class="design-card-client">Venta de iPhones</div>
+        </div>
+      </div>
+
+      <div class="design-card reveal reveal-delay-1">
+        <div class="design-card-inner">
+          <img src="ComproDolares.JPG" alt="Flyer personal"
+              style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="design-card-meta">
+          <div class="design-card-title">Flyer promocional</div>
+          <div class="design-card-client">Venta de iPhones</div>
+        </div>
+      </div>
+
+      <div class="design-card reveal reveal-delay-2">
+        <div class="design-card-inner">
+          <img src="envios y contactos.jpg" alt="Flyer promocional"
+              style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="design-card-meta">
+          <div class="design-card-title">FLyer promocional</div>
+          <div class="design-card-client">Venta de iPhones</div>
+        </div>
+      </div>
+
+      <div class="design-card reveal reveal-delay-3">
+        <div class="design-card-inner">
+          <img src="ServicioTecnico.JPG" alt="Flyer promocional"
+              style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="design-card-meta">
+          <div class="design-card-title">FLyer Promocional</div>
+          <div class="design-card-client">Venta de iPhones</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="portfolio-note reveal">
+      <p>
+        📁 Ver todos los trabajos de diseño en
+        <a href="https://drive.google.com/drive/folders/1-TwCnO4fZgKTmpRVl1GsS_Ka6kUVzqaQ" target="_blank">
+          Google Drive →
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ── PESTAÑA: VIDEOS ── -->
+  <div class="tab-panel" id="tab-videos">
+    <div class="video-grid">
+
+      <div class="video-card reveal reveal-delay-0">
+        <div class="video-thumb">
+          <video class="video-thumb-src" preload="metadata" muted playsinline loop>
+            <source src="lau5.mp4" type="video/mp4">
+          </video>
+          <div class="video-play-overlay" aria-hidden="true">▶</div>
+        </div>
+        <div class="video-card-meta">
+          <div>
+            <div class="video-card-title">Reel</div>
+            <div class="video-card-client">Marca personal</div>
+          </div>
+          <a href="https://drive.google.com/file/d/14JexBEEPtvM4dzsg-pzKjQ9HANYu0bku/view?usp=drive_link"
+             target="_blank" class="ext-link" aria-label="Ver en Drive">↗</a>
+        </div>
+      </div>
+
+      <div class="video-card reveal reveal-delay-1">
+        <div class="video-thumb">
+          <video class="video-thumb-src" preload="metadata" muted playsinline loop>
+            <source src="proyecto5.mp4" type="video/mp4">
+          </video>
+          <div class="video-play-overlay" aria-hidden="true">▶</div>
+        </div>
+        <div class="video-card-meta">
+          <div>
+            <div class="video-card-title">Reel</div>
+            <div class="video-card-client">Marca personal</div>
+          </div>
+          <a href="https://drive.google.com/file/d/1O_N0VDmjzojbQ-zd0mhjO_iQJP2dIiEo/view?usp=drive_link"
+             target="_blank" class="ext-link" aria-label="Ver en Drive">↗</a>
+        </div>
+      </div>
+
+      <div class="video-card reveal reveal-delay-2">
+        <div class="video-thumb">
+          <video class="video-thumb-src" preload="metadata" muted playsinline loop>
+            <source src="Proyecto 2.mp4" type="video/mp4">
+          </video>
+          <div class="video-play-overlay" aria-hidden="true">▶</div>
+        </div>
+        <div class="video-card-meta">
+          <div>
+            <div class="video-card-title">Reel</div>
+            <div class="video-card-client">Marca personal</div>
+          </div>
+          <a href="https://drive.google.com/file/d/1Ry5IIR0c1yS9B79FWWIWyjbEJayoobTx/view?usp=drive_link"
+             target="_blank" class="ext-link" aria-label="Ver en Drive">↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="portfolio-note reveal">
+      <p>
+        📁 Ver todos los videos en
+        <a href="https://drive.google.com/drive/folders/1-TwCnO4fZgKTmpRVl1GsS_Ka6kUVzqaQ" target="_blank">
+          Google Drive →
+        </a>
+        &nbsp;|&nbsp;
+        <a href="https://www.instagram.com/fede.viillonn" target="_blank">
+          Instagram laboral @fede.viillonn →
+        </a>
+      </p>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     CONTACTO
+     ============================================================ -->
+<section id="contacto">
+  <div class="contact-grid">
+
+    <div>
+      <p class="section-tag reveal">Contacto</p>
+      <h2 class="section-title reveal">Hablemos</h2>
+      <p class="contact-intro reveal">
+        ¿Necesitás <strong>contenido que venda</strong> en Instagram? Ya sea un reel, un flyer
+        o una estrategia visual completa, <strong>estoy disponible</strong> para nuevos proyectos.
+      </p>
+    </div>
+
+    <div class="contact-cards">
+
+      <!-- WhatsApp -->
+      <a class="contact-card reveal"
+         href="https://wa.me/5493447552717?text=Hola%20Federico%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20trabajar%20con%20vos.%20%C2%BFPod%C3%A9s%20contarme%20m%C3%A1s%20sobre%20tus%20servicios%3F"
+         target="_blank">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.395A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.073-1.115l-.29-.172-3.016.845.862-2.948-.19-.304A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.406-5.845c-.241-.12-1.427-.703-1.648-.783-.221-.08-.382-.12-.543.12-.16.24-.622.783-.763.944-.14.16-.281.18-.521.06-.241-.12-1.017-.375-1.937-1.195-.716-.638-1.2-1.426-1.34-1.666-.14-.24-.015-.37.105-.49.108-.108.241-.281.361-.421.12-.14.16-.24.24-.4.08-.161.04-.301-.02-.421-.06-.12-.543-1.308-.743-1.79-.196-.47-.395-.406-.543-.414l-.462-.008c-.16 0-.42.06-.64.3-.22.24-.84.822-.84 2.004 0 1.182.86 2.323.98 2.483.12.16 1.69 2.579 4.097 3.617.573.247 1.02.394 1.368.505.575.183 1.099.157 1.512.095.461-.069 1.427-.584 1.629-1.148.2-.563.2-1.045.14-1.145-.06-.1-.22-.16-.462-.28z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-value">+54 9 3447 55-2717</div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+
+      <!-- Instagram laboral -->
+      <a class="contact-card reveal reveal-delay-1"
+         href="https://www.instagram.com/fede.viillonn" target="_blank">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.92 4.92 0 011.772 1.153 4.92 4.92 0 011.153 1.772c.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.92 4.92 0 01-1.153 1.772 4.92 4.92 0 01-1.772 1.153c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.92 4.92 0 01-1.772-1.153 4.92 4.92 0 01-1.153-1.772c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43A4.92 4.92 0 013.79 2.948a4.92 4.92 0 011.772-1.153c.46-.163 1.26-.35 2.43-.403C9.266 2.175 9.646 2.163 12 2.163zm0-2.163C8.756 0 8.334.013 7.053.072 5.775.131 4.902.333 4.14.63a7.07 7.07 0 00-2.563 1.667A7.07 7.07 0 00.63 4.86C.333 5.622.131 6.495.072 7.773.013 9.054 0 9.476 0 12s.013 2.946.072 4.227c.059 1.278.261 2.151.558 2.913a7.07 7.07 0 001.667 2.563 7.07 7.07 0 002.563 1.667c.762.297 1.635.499 2.913.558C8.334 23.987 8.756 24 12 24s3.666-.013 4.947-.072c1.278-.059 2.151-.261 2.913-.558a7.07 7.07 0 002.563-1.667 7.07 7.07 0 001.667-2.563c.297-.762.499-1.635.558-2.913C23.987 15.666 24 15.244 24 12s-.013-2.946-.072-4.227c-.059-1.278-.261-2.151-.558-2.913a7.07 7.07 0 00-1.667-2.563A7.07 7.07 0 0019.14.63C18.378.333 17.505.131 16.227.072 14.946.013 14.524 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-label">Instagram — Laboral</div>
+          <div class="contact-value">@fede.viillonn</div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+
+      <!-- Instagram personal -->
+      <a class="contact-card reveal reveal-delay-2"
+         href="https://www.instagram.com/fede.villon" target="_blank">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.92 4.92 0 011.772 1.153 4.92 4.92 0 011.153 1.772c.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.92 4.92 0 01-1.153 1.772 4.92 4.92 0 01-1.772 1.153c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.92 4.92 0 01-1.772-1.153 4.92 4.92 0 01-1.153-1.772c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43A4.92 4.92 0 013.79 2.948a4.92 4.92 0 011.772-1.153c.46-.163 1.26-.35 2.43-.403C9.266 2.175 9.646 2.163 12 2.163zm0-2.163C8.756 0 8.334.013 7.053.072 5.775.131 4.902.333 4.14.63a7.07 7.07 0 00-2.563 1.667A7.07 7.07 0 00.63 4.86C.333 5.622.131 6.495.072 7.773.013 9.054 0 9.476 0 12s.013 2.946.072 4.227c.059 1.278.261 2.151.558 2.913a7.07 7.07 0 001.667 2.563 7.07 7.07 0 002.563 1.667c.762.297 1.635.499 2.913.558C8.334 23.987 8.756 24 12 24s3.666-.013 4.947-.072c1.278-.059 2.151-.261 2.913-.558a7.07 7.07 0 002.563-1.667 7.07 7.07 0 001.667-2.563c.297-.762.499-1.635.558-2.913C23.987 15.666 24 15.244 24 12s-.013-2.946-.072-4.227c-.059-1.278-.261-2.151-.558-2.913a7.07 7.07 0 00-1.667-2.563A7.07 7.07 0 0019.14.63C18.378.333 17.505.131 16.227.072 14.946.013 14.524 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-label">Instagram — Personal</div>
+          <div class="contact-value">@fede.villon</div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+
+      <!-- Email -->
+      <a class="contact-card reveal reveal-delay-3"
+         href="mailto:fedevillon110@gmail.com">
+        <div class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">fedevillon110@gmail.com</div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-name">F<span>.</span>V</div>
+  <div class="footer-copy">© 2026 Federico Villón — Video Editor & Diseño Gráfico</div>
+</footer>
+
+<!-- JavaScript -->
+<!-- Preview modal -->
+<div class="preview-modal" id="previewModal" aria-hidden="true">
+  <div class="preview-overlay" id="previewOverlay" role="button" aria-label="Cerrar vista previa"></div>
+  <div class="preview-content" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+    <button class="preview-close" id="previewClose" aria-label="Cerrar">×</button>
+    <div class="preview-card">
+      <img id="previewImage" class="preview-image" src="" alt="" />
+      <video id="previewVideo" class="preview-video" controls playsinline style="display:none; width:100%; max-height:68vh; border-radius:18px; background:#000;"></video>
+      <div class="preview-text" id="previewText">Vista previa disponible en breve.</div>
+      <div class="preview-caption">
+        <h3 id="previewTitle">Vista previa</h3>
+        <p id="previewSubtitle"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
