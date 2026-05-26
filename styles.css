@@ -988,26 +988,4 @@ footer {
   opacity: 1;
   pointer-events: auto;
 }
-/* ── PLAY OVERLAY centrado en azul ── */
-.video-play-overlay {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-  width: 58px; height: 58px;
-  border-radius: 50%;
-  background: rgba(126,184,212,0.15);
-  border: 2px solid #7eb8d4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  color: #7eb8d4;
-  padding-left: 4px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.design-card:hover .video-play-overlay {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
+
