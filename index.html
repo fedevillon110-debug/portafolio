@@ -5,29 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Federico Villón — Video Editor</title>
 
-  <!-- Google Fonts -->
+  <!-- fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 
-  <!-- Estilos -->
+  <!-- estilos -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ============================================================
-     NAVEGACIÓN
-     ============================================================ -->
+<!-- NAVEGACIÓN -->
 <nav>
   <a href="#home" class="nav-logo">F<span>.</span>V</a>
-
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#trabajos">Trabajos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
-
   <button class="hamburger" id="hamburger" aria-label="Menú">
     <span></span>
     <span></span>
@@ -35,7 +31,7 @@
   </button>
 </nav>
 
-<!-- Menú mobile -->
+<!-- menú mobile -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#home"      onclick="closeMobile()">Home</a>
   <a href="#sobre-mi"  onclick="closeMobile()">Sobre mí</a>
@@ -43,25 +39,18 @@
   <a href="#contacto"  onclick="closeMobile()">Contacto</a>
 </div>
 
-
-<!-- ============================================================
-     HERO
-     ============================================================ -->
+<!-- hero -->
 <section id="home">
   <div class="hero-bg" id="heroBg"></div>
-
   <div class="hero-content">
     <p class="hero-eyebrow">Portafolio — 2026</p>
-
     <h1 class="hero-name">
       Villón<br>
       <span class="accent">Federico</span>
     </h1>
-
     <p class="hero-sub">
-      Video Editor&nbsp;<span>·</span>&nbsp;Diseño Gráfico&nbsp;<span>·</span>&nbsp;Content Creator
+      Video Editor&nbsp;<span>·</span>&nbsp;Diseño&nbsp;<span>·</span>&nbsp;Content Creator
     </p>
-
     <div class="hero-scroll">
       <div class="scroll-line">
         <div class="scroll-dot"></div>
@@ -74,13 +63,10 @@
 </section>
 
 
-<!-- ============================================================
-     SOBRE MÍ
-     ============================================================ -->
+<!-- sobre mi -->
 <section id="sobre-mi">
   <div class="about-grid">
-
-    <!-- Foto -->
+<!-- Foto -->
     <div class="about-photo-wrap reveal">
       <div class="about-corner tl"></div>
       <div class="about-photo-frame">
@@ -88,26 +74,22 @@
       </div>
       <div class="about-corner br"></div>
     </div>
-
-    <!-- Texto -->
+<!-- Texto -->
     <div class="about-text">
       <p class="section-tag reveal">Sobre mí</p>
       <h2 class="section-title reveal">Quien<br>soy</h2>
-
       <p class="about-bio reveal reveal-delay-1">
         Soy <strong>Federico Villón</strong>, tengo 18 años y vivo en Concepción del Uruguay, Entre Ríos.
         Estudio <span class="highlight">Ingeniería en Sistemas de Información</span> en la UTN FRCU
-        mientras me dedico de lleno a la edición de video y el diseño gráfico enfocado en
+        mientras me dedico de lleno a la edición de video y el diseño enfocado en
         <span class="highlight">ventas para redes sociales</span>.
       </p>
 
       <p class="about-bio reveal reveal-delay-2">
-        Hace <strong>dos años</strong> arranqué editando mi propio contenido, mostrando mi día a día
-        como editor, y eso me permitió construir una base sólida de clientes reales:
+        Hace <strong>dos años</strong> arranqué editando mis propios proyectos, ello me permitió construir una base sólida de clientes reales:
         <strong>peluquerías, ventas de iPhone y celulares</strong>, entre otros negocios que necesitan
         contenido que venda.
       </p>
-
       <div class="about-stats reveal reveal-delay-3">
         <div class="stat-item">
           <div class="stat-number">2+</div>
@@ -123,28 +105,24 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
 
-<!-- ============================================================
-     TRABAJOS
-     ============================================================ -->
+<!-- mis trabajos -->
 <section id="trabajos">
   <p class="section-tag reveal">Portafolio</p>
   <h2 class="section-title reveal">Mis<br>Trabajos</h2>
-
-  <!-- Tabs -->
+<!-- Tabs -->
   <div class="tabs reveal">
-    <button class="tab-btn active" onclick="switchTab('diseno', this)">Diseño gráfico</button>
+    <button class="tab-btn active" onclick="switchTab('diseno', this)">Diseños</button>
     <button class="tab-btn"        onclick="switchTab('videos', this)">Videos</button>
   </div>
 
-  <!-- ── PESTAÑA: DISEÑO ── -->
+  <!-- diseño -->
   <div class="tab-panel active" id="tab-diseno">
     <div class="design-grid">
-
+<!-- flyer 1 -->
       <div class="design-card reveal reveal-delay-1">
         <div class="design-card-inner">
           <img src="como atendemos.jpg" alt="Flyer promocional"
@@ -155,7 +133,7 @@
           <div class="design-card-client">Venta de iPhones</div>
         </div>
       </div>
-
+<!-- flyer 2 -->
       <div class="design-card reveal reveal-delay-1">
         <div class="design-card-inner">
           <img src="ComproDolares.JPG" alt="Flyer personal"
@@ -166,7 +144,7 @@
           <div class="design-card-client">Venta de iPhones</div>
         </div>
       </div>
-
+<!-- flyer 3 -->
       <div class="design-card reveal reveal-delay-2">
         <div class="design-card-inner">
           <img src="envios y contactos.jpg" alt="Flyer promocional"
@@ -177,7 +155,7 @@
           <div class="design-card-client">Venta de iPhones</div>
         </div>
       </div>
-
+<!-- flyer 4 -->
       <div class="design-card reveal reveal-delay-3">
         <div class="design-card-inner">
           <img src="ServicioTecnico.JPG" alt="Flyer promocional"
@@ -188,7 +166,6 @@
           <div class="design-card-client">Venta de iPhones</div>
         </div>
       </div>
-
     </div>
 
     <div class="portfolio-note reveal">
@@ -200,10 +177,10 @@
       </p>
     </div>
   </div>
-<!-- ── PESTAÑA: VIDEOS ── -->
+<!-- videos -->
 <div class="tab-panel" id="tab-videos">
   <div class="video-grid">
-    <!-- VIDEO 1 -->
+<!-- video 1 -->
     <div class="video-card reveal reveal-delay-0">
       <a href="https://youtube.com/shorts/e4DJIUVQMMQ"
          target="_blank"
@@ -213,6 +190,7 @@
                src="https://i.ytimg.com/vi/e4DJIUVQMMQ/hqdefault.jpg"
                alt="Reel">
           <div class="video-play-overlay">▶</div>
+          <button class="video-fullscreen-btn" type="button" aria-label="Ver a pantalla completa">⛶</button>
         </div>
       </a>
       <div class="video-card-meta">
@@ -228,7 +206,7 @@
         </a>
       </div>
     </div>
-    <!-- VIDEO 2 -->
+<!-- video 2 -->
     <div class="video-card reveal reveal-delay-1">
       <a href="https://youtube.com/shorts/B2Q9FhaLi5E"
          target="_blank"
@@ -238,6 +216,7 @@
                src="https://i.ytimg.com/vi/B2Q9FhaLi5E/hqdefault.jpg"
                alt="Reel">
           <div class="video-play-overlay">▶</div>
+          <button class="video-fullscreen-btn" type="button" aria-label="Ver a pantalla completa">⛶</button>
         </div>
       </a>
       <div class="video-card-meta">
@@ -253,7 +232,7 @@
         </a>
       </div>
     </div>
-    <!-- VIDEO 3 -->
+<!-- video 3 -->
     <div class="video-card reveal reveal-delay-2">
       <a href="https://youtube.com/shorts/_5XHDOB1nCM"
          target="_blank"
@@ -263,6 +242,7 @@
                src="https://i.ytimg.com/vi/_5XHDOB1nCM/hqdefault.jpg"
                alt="Reel">
           <div class="video-play-overlay">▶</div>
+          <button class="video-fullscreen-btn" type="button" aria-label="Ver a pantalla completa">⛶</button>
         </div>
       </a>
       <div class="video-card-meta">
@@ -287,9 +267,9 @@
         Google Drive →
       </a>
       &nbsp;|&nbsp;
-      <a href="https://www.instagram.com/fede.viillonn"
+      <a href="https://www.instagram.com/fede.villonn"
          target="_blank">
-        Instagram laboral @fede.viillonn →
+        Instagram laboral @fede.villonn →
       </a>
     </p>
   </div>
@@ -297,12 +277,9 @@
 </section>
 
 
-<!-- ============================================================
-     CONTACTO
-     ============================================================ -->
+<!-- contacto -->
 <section id="contacto">
   <div class="contact-grid">
-
     <div>
       <p class="section-tag reveal">Contacto</p>
       <h2 class="section-title reveal">Hablemos</h2>
@@ -311,10 +288,8 @@
         o una estrategia visual completa, <strong>estoy disponible</strong> para nuevos proyectos.
       </p>
     </div>
-
     <div class="contact-cards">
-
-      <!-- WhatsApp -->
+<!-- whatsApp -->
       <a class="contact-card reveal"
          href="https://wa.me/5493447552717?text=Hola%20Federico%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20trabajar%20con%20vos.%20%C2%BFPod%C3%A9s%20contarme%20m%C3%A1s%20sobre%20tus%20servicios%3F"
          target="_blank">
@@ -329,10 +304,9 @@
         </div>
         <span class="contact-arrow">→</span>
       </a>
-
       <!-- Instagram laboral -->
       <a class="contact-card reveal reveal-delay-1"
-         href="https://www.instagram.com/fede.viillonn" target="_blank">
+         href="https://www.instagram.com/fede.villonn" target="_blank">
         <div class="contact-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.92 4.92 0 011.772 1.153 4.92 4.92 0 011.153 1.772c.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.92 4.92 0 01-1.153 1.772 4.92 4.92 0 01-1.772 1.153c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.92 4.92 0 01-1.772-1.153 4.92 4.92 0 01-1.153-1.772c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43A4.92 4.92 0 013.79 2.948a4.92 4.92 0 011.772-1.153c.46-.163 1.26-.35 2.43-.403C9.266 2.175 9.646 2.163 12 2.163zm0-2.163C8.756 0 8.334.013 7.053.072 5.775.131 4.902.333 4.14.63a7.07 7.07 0 00-2.563 1.667A7.07 7.07 0 00.63 4.86C.333 5.622.131 6.495.072 7.773.013 9.054 0 9.476 0 12s.013 2.946.072 4.227c.059 1.278.261 2.151.558 2.913a7.07 7.07 0 001.667 2.563 7.07 7.07 0 002.563 1.667c.762.297 1.635.499 2.913.558C8.334 23.987 8.756 24 12 24s3.666-.013 4.947-.072c1.278-.059 2.151-.261 2.913-.558a7.07 7.07 0 002.563-1.667 7.07 7.07 0 001.667-2.563c.297-.762.499-1.635.558-2.913C23.987 15.666 24 15.244 24 12s-.013-2.946-.072-4.227c-.059-1.278-.261-2.151-.558-2.913a7.07 7.07 0 00-1.667-2.563A7.07 7.07 0 0019.14.63C18.378.333 17.505.131 16.227.072 14.946.013 14.524 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
@@ -340,11 +314,10 @@
         </div>
         <div>
           <div class="contact-label">Instagram — Laboral</div>
-          <div class="contact-value">@fede.viillonn</div>
+          <div class="contact-value">@fede.villonn</div>
         </div>
         <span class="contact-arrow">→</span>
       </a>
-
       <!-- Instagram personal -->
       <a class="contact-card reveal reveal-delay-2"
          href="https://www.instagram.com/fede.villon" target="_blank">
@@ -359,8 +332,7 @@
         </div>
         <span class="contact-arrow">→</span>
       </a>
-
-      <!-- Email -->
+      <!-- mail -->
       <a class="contact-card reveal reveal-delay-3"
          href="mailto:fedevillon110@gmail.com">
         <div class="contact-icon">
@@ -374,18 +346,15 @@
         </div>
         <span class="contact-arrow">→</span>
       </a>
-
     </div>
   </div>
 </section>
 
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+<!-- footer -->
 <footer>
   <div class="footer-name">F<span>.</span>V</div>
-  <div class="footer-copy">© 2026 Federico Villón — Video Editor & Diseño Gráfico</div>
+  <div class="footer-copy">© 2026 Federico Villón — Video Editor & Content Creator</div>
 </footer>
 
 <!-- JavaScript -->
@@ -410,3 +379,4 @@
 
 </body>
 </html>
+
