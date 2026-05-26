@@ -85,56 +85,16 @@ document.querySelectorAll('.video-card').forEach(card => {
 
 /* ── CARDS — flyers y videos ── */
 document.querySelectorAll('.design-card').forEach(card => {
-  const ytId    = card.dataset.ytId;
+  const img     = card.querySelector('.design-card-inner img');
   const extLink = card.querySelector('.ext-link');
-
+   if (!img) return;
   card.addEventListener('click', (e) => {
-    if (extLink?.contains(e.target)) return;
-
-    const title  = card.querySelector('.design-card-title')?.textContent?.trim() || '';
-    const client = card.querySelector('.design-card-client')?.textContent?.trim() || '';
-
-    if (ytId) {
-      /* VIDEO → modal con miniatura + botón YouTube */
-      const wrap = document.createElement('div');
-      wrap.className = 'modal-media';
-      wrap.style.cssText = 'position:relative;width:100%;border-radius:12px;overflow:hidden;';
-
-      const thumb = document.createElement('img');
-      thumb.src = `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`;
-      thumb.alt = title;
-      thumb.style.cssText = 'width:100%;max-height:72vh;object-fit:cover;display:block;filter:brightness(0.5);';
-
-      const btn = document.createElement('a');
-      btn.href = `https://youtube.com/shorts/${ytId}`;
-      btn.target = '_blank';
-      btn.style.cssText =
-        'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);' +
-        'display:flex;flex-direction:column;align-items:center;gap:.6rem;text-decoration:none;';
-      btn.innerHTML = `
-        <div style="width:64px;height:64px;border-radius:50%;
-          background:rgba(126,184,212,0.15);border:2px solid #7eb8d4;
-          display:flex;align-items:center;justify-content:center;
-          font-size:1.5rem;color:#7eb8d4;padding-left:4px;">▶</div>
-        <span style="font-family:'DM Mono',monospace;font-size:.68rem;
-          letter-spacing:.15em;text-transform:uppercase;color:#7eb8d4;">
-          Ver en YouTube →</span>`;
-
-      wrap.appendChild(thumb);
-      wrap.appendChild(btn);
-      openModal(wrap, title, client);
-
-    } else {
-      /* FLYER → modal con imagen grande */
-      const img = card.querySelector('.design-card-inner img');
-      if (!img) return;
-      const el = document.createElement('img');
-      el.className = 'modal-media';
-      el.src = img.src;
-      el.alt = title;
-      el.style.cssText = 'width:100%;max-height:80vh;object-fit:contain;border-radius:12px;display:block;';
-      openModal(el, title, client);
-    }
+    if (extLink && extLink.contains(e.target)) return;
+    openImageModal(
+      img.src,
+      card.querySelector('.design-card-title')?.textContent?.trim() || '',
+      card.querySelector('.design-card-client')?.textContent?.trim() || ''
+    );
   });
 });
 
