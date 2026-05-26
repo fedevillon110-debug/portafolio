@@ -1,9 +1,4 @@
-/* ============================================
-   PORTFOLIO — FEDERICO VILLÓN
-   script.js
-   ============================================ */
-
-/* ── MENÚ HAMBURGUESA ── */
+/* ── menu hamburguesa ── */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
@@ -15,7 +10,7 @@ function closeMobile() {
   mobileMenu.classList.remove('open');
 }
 
-/* ── SCROLL REVEAL ── */
+/* ── scroll reveal ── */
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -26,7 +21,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-/* ── TABS ── */
+/* ── tabs ── */
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -34,30 +29,40 @@ function switchTab(id, btn) {
   btn.classList.add('active');
 }
 
-/* ── PARALLAX HERO ── */
+/* ── hero ── */
 window.addEventListener('scroll', () => {
   const bg = document.getElementById('heroBg');
   if (bg) bg.style.transform = `scale(1.04) translateY(${window.scrollY * 0.15}px)`;
 });
 
-/* ── VIDEO CARDS — hover preview + modal ── */
+/* ── video cards ── */
 document.querySelectorAll('.video-card').forEach(card => {
-  const ytId    = card.dataset.ytId;
-  const thumb   = card.querySelector('.video-thumb');
-  const extLink = card.querySelector('.ext-link');
-  if (!ytId || !thumb) return;
+  const thumbLink = card.querySelector('.video-thumb-link');
+  const thumb     = card.querySelector('.video-thumb');
+  const thumbImg  = card.querySelector('.video-thumb-img');
+  const extLink   = card.querySelector('.ext-link');
+  if (!thumbLink || !thumb) return;
+
+  /* youtube id del href */
+  const href = thumbLink.href || '';
+  const ytIdMatch = href.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]+)|youtu\.be\/([A-Za-z0-9_-]+)|youtube\.com\/watch\?v=([A-Za-z0-9_-]+)/);
+  const ytId = ytIdMatch ? (ytIdMatch[1] || ytIdMatch[2] || ytIdMatch[3]) : null;
+  if (!ytId) return;
 
   let previewIframe = null;
   let hoverTimer    = null;
 
-  /* HOVER ENTER: inyecta iframe muted después de 350ms */
+  /* hover enter quitar blur de imagen */
   card.addEventListener('mouseenter', () => {
+    if (thumbImg) {
+      thumbImg.style.opacity = '1';
+      thumbImg.style.filter = 'blur(0)';
+    }
     hoverTimer = setTimeout(() => {
       if (previewIframe) return;
       previewIframe = document.createElement('iframe');
       previewIframe.className = 'thumb-preview';
       previewIframe.setAttribute('allow', 'autoplay; encrypted-media');
-      /* mute=1 es obligatorio para autoplay en navegadores modernos */
       previewIframe.src =
         `https://www.youtube-nocookie.com/embed/${ytId}` +
         `?autoplay=1&mute=1&controls=0&loop=1&playlist=${ytId}` +
@@ -66,24 +71,48 @@ document.querySelectorAll('.video-card').forEach(card => {
     }, 350);
   });
 
-  /* HOVER LEAVE: elimina el iframe para detener reproducción */
+  /* over leave revertir blur y eliminar iframe */
   card.addEventListener('mouseleave', () => {
     clearTimeout(hoverTimer);
     if (previewIframe) { previewIframe.remove(); previewIframe = null; }
+    if (thumbImg) {
+      thumbImg.style.opacity = '0.85';
+      thumbImg.style.filter = 'blur(1.6px)';
+    }
   });
 
-  /* CLICK: abrir modal con sonido — no si clickearon el ↗ */
-  card.addEventListener('click', (e) => {
-    if (extLink && extLink.contains(e.target)) return;
+  /* click en el botón fullscreen: abrir modal con video desmuteado */
+  const fullscreenBtn = card.querySelector('.video-fullscreen-btn');
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openVideoModal(
+        ytId,
+        card.querySelector('.video-card-title')?.textContent?.trim() || 'Reel',
+        card.querySelector('.video-card-client')?.textContent?.trim() || ''
+      );
+    });
+  }
+
+  /* click en el link: prevenir navegación y abrir modal */
+  thumbLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     openVideoModal(
       ytId,
       card.querySelector('.video-card-title')?.textContent?.trim() || 'Reel',
       card.querySelector('.video-card-client')?.textContent?.trim() || ''
     );
   });
+
+  /* click en el card: si no es el ext-link, abrir modal */
+  card.addEventListener('click', (e) => {
+    if (extLink && extLink.contains(e.target)) return;
+  });
 });
 
-/* ── CARDS — flyers y videos ── */
+/* ── cards — flyers y videos ── */
 document.querySelectorAll('.design-card').forEach(card => {
   const img     = card.querySelector('.design-card-inner img');
   const extLink = card.querySelector('.ext-link');
@@ -98,7 +127,7 @@ document.querySelectorAll('.design-card').forEach(card => {
   });
 });
 
-/* ── MODAL ── */
+/* ── modal ── */
 const modal        = document.getElementById('previewModal');
 const modalOverlay = document.getElementById('previewOverlay');
 const modalClose   = document.getElementById('previewClose');
@@ -120,8 +149,8 @@ function openVideoModal(ytId, title, client) {
   if (modalSub)   modalSub.textContent   = client;
 
   /*
-    Usamos youtube-nocookie.com para mayor compatibilidad.
-    autoplay=1 funciona porque el usuario hizo click (gesto de usuario).
+   youtube-nocookie.com para mayor compatibilidad.
+    autoplay=1 funciona porque el usuario hizo click.
     mute=0 → con sonido en el modal.
   */
   const iframe = document.createElement('iframe');
@@ -131,9 +160,9 @@ function openVideoModal(ytId, title, client) {
   iframe.style.cssText =
     'width:100%;aspect-ratio:9/16;max-height:75vh;' +
     'border:0;border-radius:12px;display:block;background:#000;';
-  /* Primero seteamos src DESPUÉS de agregar al DOM para que el autoplay funcione */
+  /* Primero seteamos src dsp de agregar al dom para que el autoplay funcione */
   previewCard?.insertBefore(iframe, previewCard.querySelector('.preview-caption') || null);
-  /* Pequeño timeout para que el iframe esté en el DOM antes de asignar src */
+  /* pequeño timeout para que el iframe esté en el dom antes de asignar src */
   setTimeout(() => {
     iframe.src =
       `https://www.youtube-nocookie.com/embed/${ytId}` +
@@ -174,7 +203,7 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-/* Alias para compatibilidad con el HTML existente */
+/* alias para compatibilidad con el HTML existente */
 const closePreview = closeModal;
 
 if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
