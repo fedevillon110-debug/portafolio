@@ -1,15 +1,10 @@
-/* ============================================
-   PORTFOLIO — FEDERICO VILLÓN
-   styles.css
-   ============================================ */
-
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ── VARIABLES ── */
+/* ── variables ── */
 :root {
   --black: #080808;
   --white: #f5f5f0;
@@ -35,9 +30,7 @@ body {
   cursor: default;
 }
 
-/* ============================================
-   NAVEGACIÓN
-   ============================================ */
+/* navegacion */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -95,7 +88,7 @@ nav {
   width: 100%;
 }
 
-/* Hamburger */
+/* menu hamburguesa */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -116,7 +109,7 @@ nav {
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* Menú mobile */
+/* menu mobile */
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -143,9 +136,7 @@ nav {
   color: var(--blue);
 }
 
-/* ============================================
-   HERO
-   ============================================ */
+/* hero */
 #home {
   position: relative;
   min-height: 100vh;
@@ -250,7 +241,7 @@ nav {
 .scroll-dot:nth-child(2) { animation-delay: 0.2s; opacity: 0.6; }
 .scroll-dot:nth-child(3) { animation-delay: 0.4s; opacity: 0.3; }
 
-/* ── KEYFRAMES ── */
+/* ── keyframes ── */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(5px); }
@@ -261,9 +252,7 @@ nav {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================
-   SECCIONES — GENERAL
-   ============================================ */
+/* general */
 section {
   padding: 10vh 5vw;
   position: relative;
@@ -287,9 +276,7 @@ section {
   margin-bottom: 3rem;
 }
 
-/* ============================================
-   SOBRE MÍ
-   ============================================ */
+/* sobre mi */
 #sobre-mi {
   background: var(--gray-mid);
   border-top: 0.5px solid rgba(126, 184, 212, 0.1);
@@ -377,9 +364,7 @@ section {
   font-family: 'DM Mono', monospace;
 }
 
-/* ============================================
-   TRABAJOS
-   ============================================ */
+/* mis trabajos */
 #trabajos {
   background: var(--black);
 }
@@ -418,7 +403,7 @@ section {
 .tab-panel        { display: none; }
 .tab-panel.active { display: block; }
 
-/* Grid diseño */
+/* grid diseño */
 .design-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -615,11 +600,13 @@ section {
   line-height: 1.6;
 }
 
-/* Grid videos */
+/* grid videos */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .video-card {
@@ -628,19 +615,31 @@ section {
   border-radius: 2px;
   background: var(--gray);
   border: 0.5px solid rgba(245, 245, 240, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.video-card:hover,
+.video-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+  outline: none;
+}
+
+.video-thumb-link {
+  display: block;
+  text-decoration: none;
   cursor: pointer;
 }
 
 .video-thumb {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
   position: relative;
   overflow: hidden;
-  background: #111;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-/* Video thumbnail default: slightly blurred + dim */
+/* +video */
 .video-thumb video {
   width: 100%;
   height: 100%;
@@ -773,9 +772,7 @@ section {
   text-decoration: underline;
 }
 
-/* ============================================
-   CONTACTO
-   ============================================ */
+/* contacto */
 #contacto {
   background: var(--gray-mid);
   border-top: 0.5px solid rgba(126, 184, 212, 0.1);
@@ -864,9 +861,7 @@ section {
   transform: translateX(0);
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+/* footer */
 footer {
   padding: 2rem 5vw;
   border-top: 0.5px solid rgba(245, 245, 240, 0.06);
@@ -894,9 +889,7 @@ footer {
   color: var(--text-muted);
 }
 
-/* ============================================
-   SCROLL REVEAL
-   ============================================ */
+/* scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(35px);
@@ -912,16 +905,14 @@ footer {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+/* responsive */
 @media (max-width: 768px) {
   .nav-links         { display: none; }
   .hamburger         { display: flex; }
   .about-grid        { grid-template-columns: 1fr; }
   .about-photo-wrap  { max-width: 280px; }
   .contact-grid      { grid-template-columns: 1fr; }
-  .video-grid        { grid-template-columns: 1fr; }
+  .video-grid        { grid-template-columns: 1fr; gap: 1.5rem; }
   .design-grid       { grid-template-columns: 1fr 1fr; }
 }
 
@@ -943,33 +934,68 @@ footer {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: blur(5px) brightness(0.5);
-  transform: scale(1.08);
-  transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+  filter: blur(1.6px) brightness(0.45);
+  opacity: 0.9;
+  transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
-/* Al hacer hover: se limpia el blur y aparece el preview iframe */
+/* al hacer hover: se limpia el blur y aparece el preview iframe */
 .video-card:hover .video-thumb-img {
-  filter: blur(0px) brightness(0.85);
-  transform: scale(1);
+  filter: blur(0px) brightness(0.8);
+  opacity: 1;
 }
 
-/* Ícono de play siempre visible, desaparece en hover */
+/* Ícono de play */
 .video-play-overlay {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  color: var(--white);
-  opacity: 0.7;
-  transition: opacity 0.3s;
+  border-radius: 50%;
+  background: rgba(126, 184, 212, 0.15);
+  color: var(--blue);
+  font-size: 1.8rem;
+  opacity: 1;
+  transition: opacity 0.3s, background 0.3s;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 .video-card:hover .video-play-overlay {
   opacity: 0; /* se oculta cuando aparece el preview */
+}
+
+/* Botón fullscreen */
+.video-fullscreen-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(126, 184, 212, 0.15);
+  border: none;
+  color: var(--blue);
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s, background 0.3s;
+  pointer-events: auto;
+  z-index: 3;
+}
+.video-card:hover .video-fullscreen-btn {
+  opacity: 1;
+  background: rgba(126, 184, 212, 0.25);
+}
+.video-fullscreen-btn:hover {
+  background: rgba(126, 184, 212, 0.35);
 }
 
 /* iframe de preview que aparece en hover */
@@ -979,13 +1005,8 @@ footer {
   width: 100%;
   height: 100%;
   border: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-.video-card:hover iframe.thumb-preview {
   opacity: 1;
   pointer-events: auto;
+  z-index: 2;
 }
 
