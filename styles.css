@@ -286,7 +286,7 @@ section {
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 6vw;
+  gap: 5vw;
   align-items: center;
   max-width: 1100px;
 }
