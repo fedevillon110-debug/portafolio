@@ -285,7 +285,7 @@ section {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 6vw;
   align-items: center;
   max-width: 1100px;
@@ -293,21 +293,24 @@ section {
 
 .about-photo-wrap {
   position: relative;
+  max-width: 380px;
+  width: 100%;
 }
 
 .about-photo-frame {
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
-  aspect-ratio: 3/4;
+  border-radius: 8px;
+  aspect-ratio: 2/3;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.55);
 }
 .about-photo-frame::before {
   content: '';
   position: absolute;
   inset: 0;
-  border: 1px solid var(--blue-mid);
+  border: 2px solid var(--blue-mid);
   z-index: 2;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 .about-photo-frame img {
   width: 100%;
@@ -315,7 +318,13 @@ section {
   object-fit: cover;
   object-position: center top;
   filter: contrast(1.05) brightness(0.92);
-  display: block;
+  display: block;  
+  transform: scale(1.02);
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1), filter 0.35s ease;
+}
+.about-photo-frame:hover img,
+.about-photo-frame:focus-within img {
+  transform: scale(1.06);
 }
 
 .about-corner {
